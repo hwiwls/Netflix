@@ -60,7 +60,12 @@ class SavedContentsViewController: UIViewController {
     }
     
     func config() {
+        configNav()
         configHierarchy()
+    }
+    
+    func configNav() {
+        self.navigationItem.title = "저장한 콘텐츠 목록"
     }
     
 

@@ -65,10 +65,10 @@ class TabBarViewController: UITabBarController {
             savedContentsViewController
         ]
         
-        tabItems.forEach {
-            $0.isNavigationBarHidden = true
-            $0.navigationBar.isTranslucent = false
-        }
+//        tabItems.forEach {
+//            $0.isNavigationBarHidden = true
+//            $0.navigationBar.isTranslucent = false
+//        }
         
         setViewControllers(tabItems, animated: true)
     }

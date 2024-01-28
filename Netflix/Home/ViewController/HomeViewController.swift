@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 100, height: 150)
+        layout.itemSize = CGSize(width: 80, height: 120)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
@@ -78,7 +78,12 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(RisingContentsCollectionViewCell.self, forCellWithReuseIdentifier: "RisingContentsCollectionViewCell")
         
+        configNav()
         configHierarchy()
+    }
+    
+    func configNav() {
+        self.navigationItem.title = "고래밥님"
     }
     
     func configHierarchy() {
@@ -98,10 +103,11 @@ class HomeViewController: UIViewController {
     }
     
     func layout() {
+        // 이미지뷰도 그렇고 전체적으로 시뮬레이터에서 UI가 입력한 값과 다르게 나오는데, 이유를 모르겠습니다.
         mainImageView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.height.equalTo(500)
+            make.height.equalTo(480)
         }
         
         playBtn.snp.makeConstraints { make in
@@ -110,9 +116,9 @@ class HomeViewController: UIViewController {
             make.leading.equalTo(mainImageView.snp.leading).inset(20)
             make.height.equalTo(40)
         }
-        
+
         contentsPickedBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(mainImageView.snp.bottom).inset(20)
+            make.bottom.equalToSuperview().offset(-20)
             make.leading.equalTo(mainImageView.snp.centerX).offset(4)
             make.trailing.equalTo(mainImageView.snp.trailing).inset(20)
             make.height.equalTo(40)
@@ -124,14 +130,14 @@ class HomeViewController: UIViewController {
         }
         
         risingContentsLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainImageView.snp.bottom).offset(16)
+            make.top.equalTo(mainImageView.snp.bottom).offset(28)   
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(4)
         }
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(risingContentsLabel.snp.bottom).offset(8)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(150)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }

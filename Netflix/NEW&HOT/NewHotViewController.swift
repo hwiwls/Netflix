@@ -93,7 +93,12 @@ class NewHotViewController: UIViewController {
     }
     
     func config() {
+        configNav()
         configHierarchy()
+    }
+    
+    func configNav() {
+        self.navigationItem.title = "NEW & HOT 검색"
     }
     
     func configHierarchy() {

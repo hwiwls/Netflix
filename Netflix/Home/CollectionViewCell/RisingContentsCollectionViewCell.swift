@@ -23,7 +23,7 @@ class RisingContentsCollectionViewCell: UICollectionViewCell {
         
         movieImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalToSuperview()
-            make.height.equalTo(150)
+            make.height.equalTo(120)
         }
         
         self.backgroundColor = .red
