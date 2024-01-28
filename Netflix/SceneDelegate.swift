@@ -14,10 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = SavedContentsViewController()
-        window?.makeKeyAndVisible()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.windowScene = windowScene
+            let tabBarController = TabBarViewController()  // 여기서 TabBarController는 이미 생성된 탭바 컨트롤러의 이름입니다.
+            window?.rootViewController = tabBarController
+            window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
