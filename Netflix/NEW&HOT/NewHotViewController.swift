@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class newHotViewController: UIViewController {
+class NewHotViewController: UIViewController {
     
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
